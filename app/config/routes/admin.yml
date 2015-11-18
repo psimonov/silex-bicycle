@@ -1,0 +1,3 @@
+admin.index:
+  path:     /
+  defaults: { _controller: 'Zaibatsu\Controllers\AdminController::indexAction' }

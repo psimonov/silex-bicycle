@@ -1,0 +1,15 @@
+site.index:
+  path:     /
+  defaults: { _controller: 'Zaibatsu\Controllers\SiteController::indexAction' }
+
+site.login:
+  path:     /login/
+  defaults: { _controller: 'Zaibatsu\Controllers\SiteController::loginAction' }
+
+site.send:
+  path:     /send/
+  defaults: { _controller: 'Zaibatsu\Controllers\SiteController::sendAction' }
+
+site.test:
+  path:     /create/
+  defaults: { _controller: 'Zaibatsu\Controllers\SiteController::createAction' }

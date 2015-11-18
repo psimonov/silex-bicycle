@@ -1,0 +1,7 @@
+index:
+  prefix: /
+  resource: routes/site.yml
+
+admin:
+  prefix: /admin/
+  resource: routes/admin.yml

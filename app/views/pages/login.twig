@@ -1,0 +1,18 @@
+{% extends 'layouts/main.twig' %}
+
+{% block page %}
+
+    <form action="{{ path('admin_check_') }}" method="post">
+        <input type="text" name="_username" placeholder="Логин" value="{{ last_username }}">
+        <input type="password" name="_password" placeholder="Пароль">
+        <input type="submit" value="Войти">
+        {{ error }}
+    </form>
+
+    {% if (error) %}
+
+        <span>{{ error }}</span>
+
+    {% endif %}
+
+{% endblock %}
