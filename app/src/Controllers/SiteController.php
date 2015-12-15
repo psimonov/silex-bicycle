@@ -2,12 +2,14 @@
 
 namespace Zaibatsu\Controllers;
 
+use Doctrine\DBAL\Schema\MySqlSchemaManager;
 use Zaibatsu\App;
 use Zaibatsu\Controller;
 use Doctrine\DBAL\Schema\Table;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder;
 
 /**
  * Class SiteController
@@ -91,6 +93,7 @@ class SiteController extends Controller
      */
     public function createAction(App $app)
     {
+        /** @var $schema MySqlSchemaManager */
         $schema = $app['db']->getSchemaManager();
 
         if (!$schema->tablesExist('users')) {
@@ -105,14 +108,14 @@ class SiteController extends Controller
             $schema->createTable($users);
 
             $app['db']->insert('users', array(
-                'username' => 'fabien',
-                'password' => '5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg==', //foo
+                'username' => 'user',
+                'password' => (new MessageDigestPasswordEncoder())->encodePassword('user', ''),
                 'roles' => 'ROLE_USER'
             ));
 
             $app['db']->insert('users', array(
                 'username' => 'admin',
-                'password' => '5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg==', //foo
+                'password' => (new MessageDigestPasswordEncoder())->encodePassword('admin', ''),
                 'roles' => 'ROLE_ADMIN'
             ));
         }
