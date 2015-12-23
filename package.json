@@ -1,0 +1,22 @@
+{
+  "name": "silex-bicycle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "web/index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psimonov/silex-bicycle.git"
+  },
+  "author": "Pavel Simonov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/psimonov/silex-bicycle/issues"
+  },
+  "homepage": "https://github.com/psimonov/silex-bicycle#readme",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  }
+}

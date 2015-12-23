@@ -1,1 +1,7 @@
 pimple.json
+
+/web/assets/css/*
+!web/assets/css/main.css
+
+/web/assets/js/*
+!web/assets/js/main.js

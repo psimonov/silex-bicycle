@@ -1,0 +1,19 @@
+{
+  "name": "silex-bicycle",
+  "description": "",
+  "main": "web/index.php",
+  "authors": [
+    "Pavel Simonov"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/psimonov/silex-bicycle",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
