@@ -5,3 +5,7 @@ pimple.json
 
 /web/assets/js/*
 !web/assets/js/main.js
+
+/web/assets/img/*
+
+/web/assets/fonts/*
