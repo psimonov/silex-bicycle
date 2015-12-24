@@ -2,17 +2,31 @@
 
 {% block page %}
 
-    <form action="{{ path('admin_check_') }}" method="post">
-        <input type="text" name="_username" placeholder="Логин" value="{{ last_username }}">
-        <input type="password" name="_password" placeholder="Пароль">
-        <input type="submit" value="Войти">
-        {{ error }}
-    </form>
+    <div class="container">
 
-    {% if (error) %}
+        <form class="form-signin" action="{{ path('admin_check_') }}" method="post">
+            <h2 class="form-signin-heading">Авторизация</h2>
+            <label for="login" class="sr-only">Логин</label>
+            <input type="text" id="username" class="form-control" name="_username" placeholder="Логин" value="{{ last_username }}">
+            <label for="password" class="sr-only">Пароль</label>
+            <input type="password" id="password" class="form-control" name="_password" placeholder="Пароль">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="remember_me" name="_remember_me"> Запомнить меня
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+        </form>
 
-        <span>{{ error }}</span>
+        {% if (error) %}
 
-    {% endif %}
+            <div class="alert alert-danger login-alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                {{ error }}
+            </div>
+
+        {% endif %}
+
+    </div>
 
 {% endblock %}
