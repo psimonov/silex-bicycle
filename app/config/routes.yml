@@ -2,6 +2,10 @@ index:
   prefix: /
   resource: routes/site.yml
 
+api:
+  prefix: /api/
+  resource: routes/api.yml
+
 admin:
   prefix: /admin/
   resource: routes/admin.yml

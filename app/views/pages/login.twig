@@ -2,7 +2,7 @@
 
 {% block page %}
 
-    <div class="container" ng-app>
+    <div class="container">
 
         <form class="form-signin" action="{{ path('admin_check_') }}" method="post">
             <h2 class="form-signin-heading">Авторизация</h2>
@@ -23,7 +23,7 @@
                 <p>The ID is {{greeting.id}}</p>
                 <p>The content is {{greeting.content}}</p>
             </div>
-        {% endverbatim %})
+        {% endverbatim %}
 
         {% if (error) %}
 

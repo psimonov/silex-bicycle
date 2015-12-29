@@ -1,0 +1,3 @@
+api.list:
+  path:     /list/
+  defaults: { _controller: 'Zaibatsu\Controllers\ApiController::listAction' }
