@@ -8,7 +8,8 @@ var source = {
     'bootstrap/dist/css/**/*.min.css': 'css/',
     'bootstrap/dist/fonts/**/*':       'fonts/',
     'bootstrap/dist/js/**/*.min.js':   'js/',
-    'jquery/dist/jquery.min.js':       'js/'
+    'jquery/dist/jquery.min.js':       'js/',
+    'angular/**/*.min.js':             'js/'
 };
 
 gulp.task('bower', function() {
