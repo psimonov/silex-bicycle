@@ -2,28 +2,21 @@
 
 {% block page %}
 
-    <div class="container">
+    <div class="container" ng-app="loginApp">
 
-        <form class="form-signin" action="{{ path('admin_check_') }}" method="post">
+        <form class="form-signin" action="{{ path('admin_check_') }}" method="post" ng-controller="sendController">
             <h2 class="form-signin-heading">Авторизация</h2>
             <label for="login" class="sr-only">Логин</label>
-            <input type="text" id="username" class="form-control" name="_username" placeholder="Логин" value="{{ last_username }}">
+            <input type="text" id="username" class="form-control" name="_username" placeholder="Логин" value="" ng-model="username">
             <label for="password" class="sr-only">Пароль</label>
-            <input type="password" id="password" class="form-control" name="_password" placeholder="Пароль" value="{{ '{{ password }}' }}">
+            <input type="password" id="password" class="form-control" name="_password" placeholder="Пароль" value="" ng-model="password">
             <div class="checkbox">
                 <label>
                     <input type="checkbox" id="remember_me" name="_remember_me"> Запомнить меня
                 </label>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+            <button class="btn btn-lg btn-primary btn-block" type="button" ng-click="check()">Войти</button>
         </form>
-
-        {% verbatim %}
-            <div ng-controller="loginController">
-                <p>The ID is {{greeting.id}}</p>
-                <p>The content is {{greeting.content}}</p>
-            </div>
-        {% endverbatim %}
 
         {% if (error) %}
 
